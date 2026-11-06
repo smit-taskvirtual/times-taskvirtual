@@ -121,7 +121,12 @@ const Home = () => {
 
 
 
-        <div class="hero parallaxie" ref={heroRef}>
+        <div class="hero hero-video parallaxie" ref={heroRef}>
+            <div class="hero-bg-video">
+                <video autoPlay muted loop playsInline poster="images/pages/home/hero-poster.jpg">
+                    <source src="https://www.times.net.in/wp-content/uploads/2026/03/Video.mp4" type="video/mp4" />
+                </video>
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7">
