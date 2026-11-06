@@ -12,7 +12,7 @@ Same on every page, already in your template. Listed once so the page files stay
 - Tagline: Supporting India’s Critical Water and Irrigation Projects Through MS Pipe Manufacturing and Coating Solutions.
 - **Quick Links:** Home, About, Products & Services, Projects, Contact, Career
 - **Contact Info:** marketing@times.net.in (mailto) · Kolkata, India
-- Copyright: © 2025 TIMES. All rights reserved.
+- Copyright: © 2026 TIMES. All rights reserved.
 - Footer strapline (small, under copyright): Crafting Precision, Shaping Reliability
 - "Scroll to Top" button (floating)
 

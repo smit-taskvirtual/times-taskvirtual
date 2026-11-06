@@ -69,5 +69,4 @@ Images folder: `public/images/times/about-us/`
 
 ---
 
-## Content discrepancy to confirm with the client
-- About says HSAW up to **3500 mm** and LSAW up to **5500 mm**; the Products page lists HSAW up to **100 inch (~2540 mm)** and LSAW up to **220 inch (~5588 mm)**. The HSAW figures don’t match.
+

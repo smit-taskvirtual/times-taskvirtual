@@ -1,8 +1,52 @@
-import React from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+
+const GetQuoteButton = () => (
+    <div class="topbar-qoute-btn">
+        <a href="contact.html" class="btn-default"><span>Get Quote</span></a>
+    </div>
+);
 
 const Home = () => {
+    const [isSticky, setIsSticky] = useState(false);
+    const heroRef = useRef(null);
+
+    useLayoutEffect(() => {
+        const hero = heroRef.current;
+
+        if (!hero) return;
+
+        const updateStickyState = () => {
+            const heroBounds = hero.getBoundingClientRect();
+            const heroInView = heroBounds.top < window.innerHeight && heroBounds.bottom > 0;
+            setIsSticky(!heroInView);
+        };
+
+        updateStickyState();
+
+        const observer = new IntersectionObserver(([entry]) => {
+            setIsSticky(!entry.isIntersecting);
+        });
+
+        observer.observe(hero);
+
+        return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+        const $ = window.jQuery;
+        const responsiveMenu = document.querySelector('.responsive-menu');
+
+        if (!$?.fn?.slicknav || !responsiveMenu || responsiveMenu.children.length) return;
+
+        $('#menu').slicknav({
+            label: '',
+            prependTo: '.responsive-menu'
+        });
+    }, []);
+
     return <>
 
+        <header class={`main-header${isSticky ? ' is-sticky' : ''}`}>
         <div class="topbar">
             <div class="container">
                 <div class="row align-items-center">
@@ -37,9 +81,7 @@ const Home = () => {
                                 </li>
                             </ul>
 
-                            <div class="topbar-qoute-btn">
-                                <a href="contact.html" class="btn-default"><span>Get Quote</span></a>
-                            </div>
+                            <GetQuoteButton />
 
                         </div>
 
@@ -48,15 +90,13 @@ const Home = () => {
             </div>
         </div>
 
-
-
-        <header class="main-header">
             <div class="header-sticky">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container">
 
                         <a class="navbar-brand" href="index-2.html">
-                            <img src="images/times_logo_big_size.png" alt="Logo" />
+                            <img class="navbar-brand-logo" src="images/times_logo_big_size.png" alt="Logo" />
+                            <img class="navbar-brand-sticky" src="/images/times-logo-horizontal.png" alt="Logo" />
                         </a>
 
 
@@ -94,19 +134,10 @@ const Home = () => {
                                 </ul>
                             </div>
 
+                        </div>
 
-                            <div class="header-social-box d-inline-flex">
-
-                                <div class="header-social-links">
-                                    <ul>
-                                        <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    </ul>
-                                </div>
-
-                            </div>
-
+                        <div class="header-social-box d-inline-flex">
+                            <GetQuoteButton />
                         </div>
 
                         <div class="navbar-toggle"></div>
@@ -118,7 +149,7 @@ const Home = () => {
 
 
 
-        <div class="hero parallaxie">
+        <div class="hero parallaxie" ref={heroRef}>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-7">
@@ -1285,7 +1316,7 @@ const Home = () => {
                         <div class="col-lg-12">
 
                             <div class="footer-copyright-text">
-                                <p>© 2025 TIMES. All rights reserved.</p>
+                                <p>© 2026 TIMES. All rights reserved.</p>
                             </div>
 
                         </div>
