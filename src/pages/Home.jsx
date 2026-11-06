@@ -175,7 +175,7 @@ const Home = () => {
 
                             <div class="about-img-1">
                                 <figure class="image-anime">
-                                    <img src="images/about-img-1.jpg" alt="" />
+                                    <img src="images/pages/home/Pipe-Lifting-Home-Page.png" alt="" />
                                 </figure>
                             </div>
 
@@ -183,7 +183,7 @@ const Home = () => {
 
                             <div class="about-img-2">
                                 <figure class="image-anime">
-                                    <img src="images/about-img-2.jpg" alt="" />
+                                    <img src="images/pages/home/LSAW-Pipe.png" alt="" />
                                 </figure>
                             </div>
 
@@ -404,11 +404,11 @@ const Home = () => {
 
                         <div class="our-story-header-img">
                             <figure class=" image-anime">
-                                <img src="images/our-story-header-img-1.jpg" alt="" />
+                                <img src="images/pages/home/Surface Preparation-slide-1.png" alt="" />
                             </figure>
 
                             <figure class=" image-anime">
-                                <img src="images/our-story-header-img-2.jpg" alt="" />
+                                <img src="images/pages/home/contact-us-hero.jpg" alt="" />
                             </figure>
                         </div>
 
@@ -420,7 +420,7 @@ const Home = () => {
 
                         <div class="our-story-img">
                             <figure class=" image-anime">
-                                <img src="images/our-story-img.jpg" alt="" />
+                                <img src="images/pages/home/Second-Image.jpeg" alt="" />
                             </figure>
                         </div>
 
@@ -589,7 +589,7 @@ const Home = () => {
 
                         <div class="what-we-do-image">
                             <figure class="image-anime">
-                                <img src="images/what-we-do-image.jpg" alt="" />
+                                <img src="images/pages/home/First-Image.jpeg" alt="" />
                             </figure>
 
 
@@ -651,7 +651,7 @@ const Home = () => {
                                 <div class="project-item wow fadeInUp">
                                     <div class="project-image">
                                         <figure class="image-anime">
-                                            <img src="images/project-1.jpg" alt="" />
+                                            <img src="images/pages/home/Hero.png" alt="" />
                                         </figure>
                                     </div>
 
@@ -671,7 +671,7 @@ const Home = () => {
                                 <div class="project-item wow fadeInUp" data-wow-delay="0.2s">
                                     <div class="project-image">
                                         <figure class="image-anime">
-                                            <img src="images/project-2.jpg" alt="" />
+                                            <img src="images/pages/home/HSAW-Pipe.jpeg" alt="" />
                                         </figure>
                                     </div>
 
@@ -691,7 +691,7 @@ const Home = () => {
                                 <div class="project-item wow fadeInUp" data-wow-delay="0.4s">
                                     <div class="project-image">
                                         <figure class="image-anime">
-                                            <img src="images/project-3.jpg" alt="" />
+                                            <img src="images/pages/home/Advance-Coating-slide-2.png" alt="" />
                                         </figure>
                                     </div>
 
@@ -711,7 +711,7 @@ const Home = () => {
                                 <div class="project-item wow fadeInUp" data-wow-delay="0.6s">
                                     <div class="project-image">
                                         <figure class="image-anime">
-                                            <img src="images/project-4.jpg" alt="" />
+                                            <img src="images/pages/home/Pipe-Lifting-Home-Page.png" alt="" />
                                         </figure>
                                     </div>
 
@@ -760,7 +760,7 @@ const Home = () => {
 
                         <div class="our-process-image">
                             <figure class="image-anime ">
-                                <img src="images/our-process-image.jpg" alt="" />
+                                <img src="images/pages/home/Advance-Coating-slide-1.png" alt="" />
                             </figure>
                         </div>
 
@@ -1146,7 +1146,7 @@ const Home = () => {
                             <div class="post-featured-image">
                                 <figure>
                                     <a href="blog-single.html" class="image-anime" data-cursor-text="View">
-                                        <img src="images/blog-1.jpg" alt="" />
+                                        <img src="images/pages/home/Advance-Coating-slide-2.png" alt="" />
                                     </a>
                                 </figure>
                             </div>
@@ -1178,7 +1178,7 @@ const Home = () => {
                             <div class="post-featured-image">
                                 <figure>
                                     <a href="blog-single.html" class="image-anime" data-cursor-text="View">
-                                        <img src="images/blog-2.jpg" alt="" />
+                                        <img src="images/pages/home/Industrial-Surface-Preparation-Coating-Solutions.png" alt="" />
                                     </a>
                                 </figure>
                             </div>

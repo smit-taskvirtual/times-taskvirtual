@@ -957,6 +957,10 @@ header.main-header .header-sticky{
 	max-width: 300px;
 }
 
+.about-img-2{
+	max-width: 300px;
+}
+
 .about-img-2 figure,
 .about-img-1 figure{
 	display: block;
@@ -1088,7 +1092,7 @@ header.main-header .header-sticky{
 .our-services{
 	position: relative;
 	padding: 100px 0 280px;
-	background: url('../images/our-service-bg.jpg') no-repeat center center;
+	background: url('../images/pages/home/Industrial-Surface-Preparation-Coating-Solutions.png') no-repeat center center;
 	background-size: cover;
 }
 
@@ -1427,6 +1431,8 @@ header.main-header .header-sticky{
 
 .what-we-do-image{
 	position: relative;
+	max-width: 90%;
+	margin: 0 auto;
 }
 
 .contact-now-circle{
@@ -2326,7 +2332,7 @@ header.main-header .header-sticky{
 
 .mission-vision-bg{
 	position: relative;
-	background: url('../images/our-service-bg.jpg');
+	background: url('../images/pages/home/Industrial-Surface-Preparation-Coating-Solutions.png');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
@@ -4916,6 +4922,10 @@ header.main-header .header-sticky{
 		margin-top: 30px;
 	}
 
+	.what-we-do-image{
+		max-width: 95%;
+		margin: 0 auto;
+	}
 	.what-we-do-image,
 	.what-we-do-image figure,
 	.what-we-do-image figure img{
@@ -5791,7 +5801,7 @@ header.main-header .header-sticky{
 	}
 
 	.about-img-2{
-		max-width: 250px;
+		max-width: 220px;
 	}
 	
 	.company-experience{
