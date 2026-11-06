@@ -610,7 +610,7 @@ header.main-header.is-sticky .header-sticky{
 }
 
 header.main-header.is-sticky .navbar{
-	background: var(--primary-color);
+	background: rgba(34, 34, 34, 0.88);
 }
 
 header.main-header .header-social-box{
@@ -2111,8 +2111,11 @@ header.main-header.is-sticky .header-social-box .topbar-qoute-btn{
 }
 
 .testimonial-company-slider .company-logo img{
-	width: 100%;
-	max-height: 40px;
+	width: auto;
+	max-width: 300px;
+	height: auto;
+	max-height: 80px;
+	object-fit: contain;
 }
 
 /************************************/
@@ -6466,4 +6469,12 @@ header.main-header.is-sticky .header-social-box .topbar-qoute-btn{
 	header.main-header.is-sticky .header-social-box{
 		display: none !important;
 	}
+}
+
+.our-testimonial-image img.no-zoom{
+	aspect-ratio: auto !important;
+	object-fit: contain !important;
+	width: 100%;
+	height: auto;
+	border-radius: 40px;
 }

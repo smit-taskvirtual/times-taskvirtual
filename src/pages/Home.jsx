@@ -44,6 +44,32 @@ const Home = () => {
         });
     }, []);
 
+    useEffect(() => {
+        if (window.Swiper && document.querySelector('.testimonial-company-slider .swiper')) {
+            new window.Swiper('.testimonial-company-slider .swiper', {
+                slidesPerView: 2,
+                speed: 4000,
+                spaceBetween: 30,
+                loop: true,
+                freeMode: true,
+                freeModeMomentum: false,
+                autoplay: {
+                    delay: 0,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 4,
+                    },
+                    991: {
+                        slidesPerView: 5,
+                    }
+                }
+            });
+        }
+    }, []);
+
     return <>
 
         <header class={`main-header${isSticky ? ' is-sticky' : ''}`}>
@@ -972,7 +998,7 @@ const Home = () => {
 
                         <div class="our-testimonial-image">
                             <figure class="image-anime ">
-                                <img src="images/testimonial-image.jpg" alt="" />
+                                <img src="images/pages/home/projects-location-map.png" alt="" class="no-zoom" />
                             </figure>
                         </div>
 
@@ -1071,54 +1097,68 @@ const Home = () => {
 
                                     <div class="swiper-slide">
                                         <div class="company-logo">
-                                            <img src="images/company-logo-1.svg" alt="" />
+                                            <img src="images/pages/home/company-icons/bac-infratech.png" alt="" />
                                         </div>
                                     </div>
-
-
-
                                     <div class="swiper-slide">
                                         <div class="company-logo">
-                                            <img src="images/company-logo-2.svg" alt="" />
+                                            <img src="images/pages/home/company-icons/dilipbuildcon.png" alt="" />
                                         </div>
                                     </div>
-
-
-
                                     <div class="swiper-slide">
                                         <div class="company-logo">
-                                            <img src="images/company-logo-3.svg" alt="" />
+                                            <img src="images/pages/home/company-icons/gaja-engineering.png" alt="" />
                                         </div>
                                     </div>
-
-
-
                                     <div class="swiper-slide">
                                         <div class="company-logo">
-                                            <img src="images/company-logo-4.svg" alt="" />
+                                            <img src="images/pages/home/company-icons/GVPR.png" alt="" />
                                         </div>
                                     </div>
-
-
-
                                     <div class="swiper-slide">
                                         <div class="company-logo">
-                                            <img src="images/company-logo-5.svg" alt="" />
+                                            <img src="images/pages/home/company-icons/icinfra.png" alt="" />
                                         </div>
                                     </div>
-
-
-
                                     <div class="swiper-slide">
                                         <div class="company-logo">
-                                            <img src="images/company-logo-1.svg" alt="" />
+                                            <img src="images/pages/home/company-icons/jwill.png" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="company-logo">
+                                            <img src="images/pages/home/company-icons/kalpa-taru.png" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="company-logo">
+                                            <img src="images/pages/home/company-icons/karan-development.png" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="company-logo">
+                                            <img src="images/pages/home/company-icons/kec.png" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="company-logo">
+                                            <img src="images/pages/home/company-icons/larsen-tourbo.png" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="company-logo">
+                                            <img src="images/pages/home/company-icons/ncc.png" alt="" />
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="company-logo">
+                                            <img src="images/pages/home/company-icons/vensar.png" alt="" />
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
