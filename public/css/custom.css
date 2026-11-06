@@ -110,6 +110,7 @@ html,
 body{
 	width: 100%;
 	overflow-x: clip;
+	scroll-padding-top: 100px;
 }
 
 .container{
@@ -487,185 +488,70 @@ body{
 /**** 	   03. Header css		 ****/
 /************************************/
 
-.topbar{
-	padding: 10px 0;
-	transition: opacity 0.3s ease, visibility 0s linear;
-}
-
-header.main-header.is-sticky .topbar{
-	opacity: 0;
-	visibility: hidden;
-	pointer-events: none;
-	transition: opacity 0.3s ease, visibility 0s linear 0.3s;
-}
-
-.topbar-contact-info{
-	display: flex;
-	align-items: center;
-	justify-content: end;
-}
-
-.topbar-contact-info ul{ 
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	margin-right: 60px;
-	padding-right: 60px;
-	border-right: 1px solid var(--divider-color);
-}
-
-.topbar-contact-info ul li{
-	display: inline-block;
-	margin-right: 15px;
-}
-
-.topbar-contact-info ul li:last-child{
-	margin-right: 0;
-}
-
-.topbar-contact-info ul li a{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.topbar-contact-info ul li .icon-box{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 40px;
-	height: 40px;
-	background: var(--accent-color);
-	border-radius: 10px;
-	margin-right: 20px;
-	transition: all 0.3s ease-in-out;
-}
-
-.topbar-contact-info ul li:hover .icon-box{
-	background: var(--primary-color);
-}
-
-.topbar-contact-info li .icon-box img{
-	max-width: 24px;
-}
-
-.topbar-contact-info ul li p{
-	color: var(--primary-color);
-	font-size: 20px;
-	font-weight: 700;
-	width: calc(100% - 60px);
-	margin: 0;
-}
-
-.topbar-qoute-btn{
-	line-height: 1em;
-}
-
-.topbar-qoute-btn .btn-default,
-.topbar-qoute-btn .btn-default span{
-	white-space: nowrap;
-}
-
 header.main-header{
-	position: relative;
-	z-index: 100;
-}
-
-header.main-header .header-sticky{
-	position: absolute;
-	top: 100%;
-	left: 0;
-	right: 0;
-	z-index: 100;
-}
-
-header.main-header.is-sticky .header-sticky{
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
-	border-radius: 0;
-	transform: translateY(0);
-	background: var(--dark-color);
-	border-bottom: 1px solid var(--dark-divider-color);
-	animation: header-sticky-in 0.35s ease both;
+	z-index: 1000;
+	transition: background-color 0.3s ease;
+	background-color: transparent;
+}
+
+header.main-header.is-scrolled{
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+header.main-header .header-sticky{
+	position: relative;
 }
 
 .navbar{
-	padding: 10px 0px;
+	padding: 15px 0px;
 	align-items: center;
 	background: transparent;
-	transition: background-color 0.3s ease;
-}
-
-@keyframes header-sticky-in{
-	from{
-		opacity: 0;
-		transform: translateY(-100%);
-	}
-	to{
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-header.main-header.is-sticky .navbar{
-	background: rgba(34, 34, 34, 0.88);
-}
-
-header.main-header .header-social-box{
-	display: none !important;
-}
-
-header.main-header.is-sticky .header-social-box{
-	display: inline-flex !important;
-}
-
-header.main-header .header-social-box .topbar-qoute-btn{
-	display: none;
-}
-
-header.main-header.is-sticky .header-social-box .topbar-qoute-btn{
-	display: block;
+	display: flex;
+	justify-content: space-between;
 }
 
 .main-header .navbar-brand{
 	padding: 0;
 	margin: 0;
-	display: none;
+	display: flex;
+	align-items: center;
 }
 
-.main-header .navbar-brand-sticky{
-	display: none;
-}
-
-.main-header.is-sticky .navbar-brand{
-	display: block;
-	margin-right: 40px;
-}
-
-.main-header.is-sticky .navbar-brand-logo{
-	display: none;
-}
-
-.main-header.is-sticky .navbar-brand-sticky{
+.main-header .navbar-brand-logo{
 	display: block;
 }
 
-.main-header.is-sticky .navbar-brand img{
+.main-header .navbar-brand img{
 	width: auto;
 	height: 48px;
-	max-width: 200px;
+	max-width: 220px;
 }
 
 .main-menu .nav-menu-wrapper{
 	flex: 1;
-	text-align: left;
+	text-align: center;
+	display: flex;
+	justify-content: center;
 }
 
 .main-menu .nav-menu-wrapper > ul{
 	align-items: center;
 	display: inline-flex;
+}
+
+.header-quote-btn{
+	display: flex;
+	align-items: center;
+	margin-left: 30px;
+}
+
+.header-quote-btn .btn-default,
+.header-quote-btn .btn-default span{
+	white-space: nowrap;
 }
 
 .main-menu ul li{
@@ -890,7 +776,7 @@ header.main-header.is-sticky .header-social-box .topbar-qoute-btn{
 
 
 .hero{
-	padding: 150px 0 40px;
+	padding: 120px 0 40px;
 	position: relative;
 	background: url('../images/hero-bg.jpg') no-repeat;
 	background-position: center center;
@@ -4670,26 +4556,8 @@ header.main-header.is-sticky .header-social-box .topbar-qoute-btn{
 }
 
 @media only screen and (max-width: 1199px){
-
-	.topbar-contact-info ul{
-		margin-right: 30px;
-		padding-right: 30px;
-	}
-
-	.topbar-contact-info ul li p{
-		font-size: 18px;
-	}
-
-	.topbar-qoute-btn .btn-default span{
-		padding: 12px 15px;
-	}
-
 	.main-menu ul li.nav-item .nav-link{
 		padding: 10px 12px;
-	}
-
-	.main-header.is-sticky .navbar-brand{
-		margin-right: 20px;
 	}
 }
 
@@ -4711,63 +4579,106 @@ header.main-header.is-sticky .header-social-box .topbar-qoute-btn{
 		padding: 12px 15px;
 	}
 
-	.topbar{
-		padding: 10px 0;
-	}
-
-	.site-logo{
-		display: none;
-	}
-
-	.topbar-contact-info{
-		justify-content: center;
-	}
-
-	.topbar-contact-info ul{
-		margin-right: 40px;
-		padding-right: 40px;
-	}
-
-	.topbar-contact-info ul li .icon-box{
-		width: 35px;
-		height: 35px;
-		margin-right: 15px;
-	}
-
-	.topbar-contact-info li .icon-box img{
-		max-width: 20px;
-	}
-
-	.topbar-contact-info ul li p{
-		font-size: 18px;
-		width: calc(100% - 50px);
-	}
-
 	.navbar{
 		padding: 15px 0;
-	}
-
-	.main-header .navbar-brand{
-		display: block;
+		flex-wrap: wrap;
 	}
 
 	.main-header .navbar-brand img{
-		max-width: 130px;
+		max-width: 160px;
+		height: 40px;
 	}
 
-	.main-header .header-social-box{
-		margin-left: auto;
+	.main-menu .nav-menu-wrapper{
+		display: none;
+		width: 100%;
+		order: 3;
+		text-align: left;
 	}
 
-	.slicknav_nav li,
-	.slicknav_nav ul{
-        display: block;
-    }
+	.main-menu .nav-menu-wrapper.slicknav_open{
+		display: block;
+	}
 
-	.responsive-menu,
-    .navbar-toggle{
-        display: block;
-    }
+	.main-menu .nav-menu-wrapper > ul{
+		display: block;
+	}
+
+	.main-menu ul li.nav-item .nav-link{
+		padding: 12px 20px;
+		border-bottom: 1px solid rgba(255,255,255,0.1);
+	}
+
+	.main-menu ul li.nav-item:first-child .nav-link{
+		padding-left: 20px;
+	}
+
+	.main-menu ul ul{
+		position: static;
+		visibility: visible;
+		opacity: 1;
+		transform: none;
+		background: rgba(0,0,0,0.3);
+		width: 100%;
+		border-radius: 0;
+		padding: 0;
+	}
+
+	.main-menu ul ul li.nav-item .nav-link{
+		padding: 8px 20px 8px 40px !important;
+		color: var(--white-color);
+	}
+
+	.header-quote-btn{
+		margin-left: 0;
+		margin-right: 10px;
+		order: 2;
+	}
+
+	.header-quote-btn .btn-default span{
+		padding: 10px 15px;
+		font-size: 14px;
+	}
+
+	.slicknav_btn{
+		order: 1;
+	}
+
+	.navbar-toggle{
+		display: block;
+	}
+
+	.responsive-menu{
+		display: block;
+		width: 100%;
+	}
+
+	.slicknav_menu{
+		position: static;
+		background: var(--primary-color);
+		border-top: 1px solid rgba(255,255,255,0.1);
+		margin-top: 10px;
+	}
+
+	.slicknav_nav .slicknav_row,
+	.slicknav_nav li a{
+		color: var(--white-color);
+	}
+
+	.slicknav_arrow:after{
+		color: var(--white-color);
+	}
+
+	.slicknav_open > a .slicknav_arrow:after{
+		color: var(--accent-color);
+	}
+
+	.slicknav_nav a:hover,
+	.slicknav_nav a:focus,
+	.slicknav_nav .slicknav_row:hover{
+		background-color: rgba(255,255,255,0.1);
+		color: var(--accent-color);
+	}
 
 	.section-row{
 		margin-bottom: 50px;
@@ -4808,7 +4719,7 @@ header.main-header.is-sticky .header-social-box .topbar-qoute-btn{
 	}
 
 	.hero{
-		padding: 80px 0 40px;
+		padding: 100px 0 40px;
 	}
 
 	.hero.hero-slider-layout .hero-slide{
@@ -5800,37 +5711,27 @@ header.main-header.is-sticky .header-social-box .topbar-qoute-btn{
 
 @media only screen and (max-width: 767px){
 
-	.topbar{
-        padding: 10px 0;
-    }
-
-	.topbar-contact-info ul{
-        margin-right: 0px;
-        padding-right: 0px;
-		border: none;
-    }
-
-	.topbar-contact-info ul li .icon-box{
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-    }
-
-	.topbar-contact-info li .icon-box img{
-        max-width: 16px;
-    }
-
-	.topbar-contact-info ul li p{
-        font-size: 14px;
-        width: calc(100% - 40px);
+	.navbar{
+		padding: 10px 0;
 	}
 
-	.topbar-qoute-btn{
-		display: none;
+	.main-header .navbar-brand img{
+		max-width: 140px;
+		height: 36px;
 	}
 
-	.main-header.is-sticky .navbar-brand{
-		margin-right: 15px;
+	.header-quote-btn .btn-default span{
+		padding: 8px 12px;
+		font-size: 13px;
+	}
+
+	.slicknav_btn{
+		width: 34px;
+		height: 34px;
+	}
+
+	.slicknav_menu{
+		margin-top: 8px;
 	}
 
 	.section-row{
@@ -6462,13 +6363,6 @@ header.main-header.is-sticky .header-social-box .topbar-qoute-btn{
 	.google-map-iframe iframe{
         height: 350px;
     }
-}
-
-@media only screen and (max-width: 359px){
-
-	header.main-header.is-sticky .header-social-box{
-		display: none !important;
-	}
 }
 
 .our-testimonial-image img.no-zoom{

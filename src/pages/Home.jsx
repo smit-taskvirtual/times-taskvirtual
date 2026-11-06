@@ -1,33 +1,25 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-
-const GetQuoteButton = () => (
-    <div class="topbar-qoute-btn">
-        <a href="contact.html" class="btn-default"><span>Get Quote</span></a>
-    </div>
-);
+import { useEffect, useRef, useState } from 'react';
 
 const Home = () => {
-    const [isSticky, setIsSticky] = useState(false);
     const heroRef = useRef(null);
+    const headerRef = useRef(null);
+    const [isScrolled, setIsScrolled] = useState(false);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const hero = heroRef.current;
+        const header = headerRef.current;
+        if (!hero || !header) return;
 
-        if (!hero) return;
-
-        const updateStickyState = () => {
-            const heroBounds = hero.getBoundingClientRect();
-            const heroInView = heroBounds.top < window.innerHeight && heroBounds.bottom > 0;
-            setIsSticky(!heroInView);
-        };
-
-        updateStickyState();
-
-        const observer = new IntersectionObserver(([entry]) => {
-            setIsSticky(!entry.isIntersecting);
-        });
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsScrolled(!entry.isIntersecting);
+            },
+            { root: null, threshold: 0 }
+        );
 
         observer.observe(hero);
+        const initialScrolled = hero.getBoundingClientRect().bottom <= 0;
+        setIsScrolled(initialScrolled);
 
         return () => observer.disconnect();
     }, []);
@@ -71,60 +63,14 @@ const Home = () => {
     }, []);
 
     return <>
-
-        <header class={`main-header${isSticky ? ' is-sticky' : ''}`}>
-        <div class="topbar">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-3">
-                        <div class="site-logo">
-                            <a href="index-2.html">
-                                <img src="images/times_logo_big_size.png" alt="Logo" />
-                            </a>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-9 col-md-12">
-
-                        <div class="topbar-contact-info">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <div class="icon-box">
-                                            <img src="images/icon-phone.svg" alt="" />
-                                        </div>
-                                        <p>Kolkata, India</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <div class="icon-box">
-                                            <img src="images/icon-mail.svg" alt="" />
-                                        </div>
-                                        <p>marketing@times.net.in</p>
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <GetQuoteButton />
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        <header class={`main-header${isScrolled ? ' is-scrolled' : ''}`} ref={headerRef}>
             <div class="header-sticky">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container">
 
                         <a class="navbar-brand" href="index-2.html">
-                            <img class="navbar-brand-logo" src="images/times_logo_big_size.png" alt="Logo" />
-                            <img class="navbar-brand-sticky" src="/images/times-logo-horizontal.png" alt="Logo" />
+                            <img class="navbar-brand-logo" src="images/times-logo-horizontal.png" alt="Logo" />
                         </a>
-
 
 
                         <div class="collapse navbar-collapse main-menu">
@@ -162,8 +108,8 @@ const Home = () => {
 
                         </div>
 
-                        <div class="header-social-box d-inline-flex">
-                            <GetQuoteButton />
+                        <div class="header-quote-btn">
+                            <a href="contact.html" class="btn-default"><span>Get Quote</span></a>
                         </div>
 
                         <div class="navbar-toggle"></div>
