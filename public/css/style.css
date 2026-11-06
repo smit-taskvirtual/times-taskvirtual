@@ -1,0 +1,14 @@
+.site-logo a img{
+    width: auto;
+    height: 70px;
+}
+
+.main-header .navbar-brand img{
+    width: auto;
+    height: 60px;
+}
+
+.footer-logo img{
+    width: auto;
+    height: 70px;
+}
